@@ -1,5 +1,6 @@
 package BrandonOrellana_20240208;
 
+import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
@@ -17,6 +18,17 @@ public class inventario {
             case 1:
                 System.out.println("Inventario" + mapa);
                 System.out.println("Stock");
+                for (Map.Entry<String, Integer > entrada: mapa.entrySet()){
+                    System.out.println("Clave: " + entrada.getKey() + ", Valor " + entrada.getValue());
+                }
+
+                System.out.println("\nListado de claves con valores menores a 10:");
+                for (String clave : mapa.keySet()) {
+                    int valor = mapa.get(clave);
+                    if (valor < 10) {
+                        System.out.println(clave + " = " + valor);
+                    }
+                }
                 break;
             case 2:
                 System.out.println("Actualizar stock: ");
